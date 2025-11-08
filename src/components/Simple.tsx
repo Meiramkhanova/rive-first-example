@@ -5,7 +5,7 @@ export default function Simple() {
   const STATE_MACHINE = "State Machine 1";
 
   const { rive, RiveComponent } = useRive({
-    src: "eaglenarxoz (5).riv",
+    src: "eaglenarxoz (9).riv",
     stateMachines: STATE_MACHINE,
     autoplay: true,
   });
@@ -21,14 +21,14 @@ export default function Simple() {
   };
 
   return (
-    <div className="size-fit relative">
-      <div className="size-80">
+    <div className="size-fit relative bg-transparent">
+      <div className="size-80 bg-transparent">
         <RiveComponent />
       </div>
 
       <button
         onClick={toggleWave}
-        className="flex border border-slate-50 absolute right-0 top-12 outline-none animate-float cursor-pointer size-11 items-center justify-center rounded-full bg-slate-50/50 shadow-md transition-all duration-500 ease-in-out hover:bg-slate-100 hover:shadow-lg active:scale-95  ">
+        className="flex border border-slate-50 absolute right-0 top-12 outline-none animate-float cursor-pointer size-11 items-center justify-center rounded-full bg-slate-50 shadow-md transition-all duration-500 ease-in-out hover:bg-slate-100 hover:shadow-lg active:scale-95  ">
         <HandWave className="size-4.5 fill-slate-500" />
       </button>
     </div>
