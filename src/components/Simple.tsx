@@ -28,7 +28,7 @@ export default function Simple() {
 
       <button
         onClick={toggleWave}
-        className="flex absolute right-0 top-12 outline-none animate-float cursor-pointer size-11 items-center justify-center rounded-full bg-slate-50/50 shadow-md transition-all duration-200 ease-in-out hover:bg-slate-100 hover:shadow-lg active:scale-95  ">
+        className="flex border border-slate-50 absolute right-0 top-12 outline-none animate-float cursor-pointer size-11 items-center justify-center rounded-full bg-slate-50/50 shadow-md transition-all duration-500 ease-in-out hover:bg-slate-100 hover:shadow-lg active:scale-95  ">
         <HandWave className="size-4.5 fill-slate-500" />
       </button>
     </div>
