@@ -1,22 +1,16 @@
 import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
-import { useEffect } from "react";
+import HandWave from "./HandWave";
 
 export default function Simple() {
   const STATE_MACHINE = "State Machine 1";
 
   const { rive, RiveComponent } = useRive({
-    src: "interactive_bunny_character (12).riv",
-    stateMachines: "State Machine 1",
+    src: "eaglenarxoz (5).riv",
+    stateMachines: STATE_MACHINE,
     autoplay: true,
   });
 
   const isWaveInput = useStateMachineInput(rive, STATE_MACHINE, "isWave");
-
-  useEffect(() => {
-    if (rive && isWaveInput) {
-      console.log("✅ Rive и isWave готовы");
-    }
-  }, [rive, isWaveInput]);
 
   const toggleWave = () => {
     if (isWaveInput) {
@@ -27,23 +21,15 @@ export default function Simple() {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <div style={{ width: "550px", height: "550px" }}>
+    <div className="size-fit relative">
+      <div className="size-80">
         <RiveComponent />
       </div>
 
       <button
         onClick={toggleWave}
-        style={{
-          marginTop: "20px",
-          padding: "10px 20px",
-          border: "none",
-          borderRadius: "8px",
-          backgroundColor: "#007bff",
-          color: "white",
-          cursor: "pointer",
-        }}>
-        Toggle Wave
+        className="flex absolute right-0 top-12 outline-none animate-float cursor-pointer size-11 items-center justify-center rounded-full bg-slate-50/50 shadow-md transition-all duration-200 ease-in-out hover:bg-slate-100 hover:shadow-lg active:scale-95  ">
+        <HandWave className="size-4.5 fill-slate-500" />
       </button>
     </div>
   );
