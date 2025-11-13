@@ -5,7 +5,7 @@ export default function Simple() {
   const STATE_MACHINE = "State Machine 1";
 
   const { rive, RiveComponent } = useRive({
-    src: "theeaglenarxoz (15).riv",
+    src: "/assets/theeaglenarxoz (16).riv",
     stateMachines: STATE_MACHINE,
     autoplay: true,
   });
@@ -26,10 +26,12 @@ export default function Simple() {
   const [message, setMessage] = useState("");
 
   const handleUserTyping = (e: React.FormEvent<HTMLInputElement>) => {
-    if (!isRead || !stopRead) return;
-
-    const value = e.currentTarget.value;
+    const value = e.currentTarget.value ?? "";
     setMessage(value);
+
+    stopThinking?.fire();
+
+    if (!isRead || !stopRead) return;
 
     if (value.trim().length > 0) {
       isRead.fire();
@@ -72,7 +74,7 @@ export default function Simple() {
 
       <input
         type="text"
-        value={message}
+        value={message ?? ""}
         onInput={handleUserTyping}
         className="border p-2 mt-4"
         placeholder="Начни печатать..."
